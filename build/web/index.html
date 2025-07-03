@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Garage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/garage-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .feature-card {
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .role-section {
+            padding: 80px 0;
+        }
+        
+        .role-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar - Đã xóa phần Giới Thiệu và Liên Hệ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-car-mechanic me-2"></i>
+                Hệ Thống Quản Lý Garage
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="LoginServlet">Đăng Nhập</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Giải Pháp Quản Lý Garage Toàn Diện</h1>
+            <p class="lead mb-5">Hệ thống quản lý garage hiện đại giúp tối ưu hóa quy trình làm việc, nâng cao chất lượng dịch vụ và tăng trải nghiệm khách hàng</p>
+            <div>
+                <a href="LoginServlet" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-sign-in-alt me-2"></i>Đăng Nhập Ngay
+                </a>
+                <a href="#features" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle me-2"></i>Tìm Hiểu Thêm
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Tính Năng Nổi Bật</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-users-cog text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Quản Lý Khách Hàng</h4>
+                            <p>Lưu trữ thông tin khách hàng, lịch sử sử dụng dịch vụ và các tương tác quan trọng khác.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-car text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Quản Lý Xe</h4>
+                            <p>Theo dõi thông tin chi tiết xe, gồm số seri, mẫu xe, năm sản xuất và lịch sử sửa chữa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-tools text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Quản Lý Dịch Vụ</h4>
+                            <p>Tạo, cập nhật và theo dõi trạng thái các phiếu dịch vụ với thông tin chi tiết sửa chữa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-cogs text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Quản Lý Phụ Tùng</h4>
+                            <p>Theo dõi tồn kho phụ tùng, tìm kiếm theo tên và cập nhật thông tin chi tiết liên quan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-file-invoice-dollar text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Quản Lý Hóa Đơn</h4>
+                            <p>Tạo và quản lý hóa đơn chi tiết cho khách hàng, bao gồm các dịch vụ và phụ tùng.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-chart-line text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h4>Báo Cáo Thống Kê</h4>
+                            <p>Xem báo cáo thống kê về doanh số bán xe, doanh thu, mẫu xe bán chạy và nhân viên xuất sắc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role-based Access Section -->
+    <section class="role-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Phân Quyền Người Dùng</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="role-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3>Nhân Viên Bán Hàng</h3>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Quản lý thông tin khách hàng</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Quản lý xe và tìm kiếm xe</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tạo phiếu dịch vụ cho khách hàng</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Quản lý phụ tùng</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tạo hóa đơn cho khách hàng</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Xem các báo cáo thống kê</li>
+                            </ul>
+                            <a href="LoginServlet" class="btn btn-primary mt-3">Đăng Nhập Ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="role-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3>Thợ Sửa Chữa</h3>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Xem phiếu dịch vụ được giao</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tìm kiếm phiếu dịch vụ</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cập nhật thông tin sửa chữa</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Ghi nhận giờ làm và đánh giá</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Quản lý các dịch vụ kỹ thuật</li>
+                            </ul>
+                            <a href="LoginServlet" class="btn btn-primary mt-3">Đăng Nhập Ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="role-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3>Khách Hàng</h3>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Xem phiếu dịch vụ của mình</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Xem chi tiết tiến trình sửa chữa</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Xem hóa đơn và lịch sử thanh toán</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cập nhật thông tin cá nhân</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Theo dõi lịch sử dịch vụ</li>
+                            </ul>
+                            <a href="LoginServlet" class="btn btn-primary mt-3">Đăng Nhập Ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section - Đã xóa phần hình ảnh -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Lợi Ích Hệ Thống</h2>
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-tachometer-alt text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Tăng Hiệu Suất</h4>
+                            <p>Tự động hóa các quy trình quản lý, giảm thời gian xử lý và tăng năng suất làm việc.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-hand-holding-usd text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Tiết Kiệm Chi Phí</h4>
+                            <p>Tối ưu hóa quy trình làm việc, giảm sai sót và hao phí, tăng lợi nhuận cho doanh nghiệp.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <i class="fas fa-chart-bar text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Phân Tích Dữ Liệu</h4>
+                            <p>Cung cấp báo cáo và thống kê chi tiết, giúp đưa ra quyết định kinh doanh hiệu quả.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-smile text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h4>Nâng Cao Trải Nghiệm</h4>
+                            <p>Khách hàng có thể theo dõi tình trạng sửa chữa xe, xem hóa đơn và lịch sử dịch vụ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Sẵn Sàng Trải Nghiệm?</h2>
+            <p class="lead mb-4">Đăng nhập ngay để sử dụng hệ thống quản lý garage hiện đại</p>
+            <a href="LoginServlet" class="btn btn-light btn-lg">
+                <i class="fas fa-sign-in-alt me-2"></i>Đăng Nhập
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Hệ Thống Quản Lý Garage</h5>
+                    <p>Giải pháp quản lý toàn diện cho cửa hàng sửa chữa ô tô</p>
+                    <div class="d-flex mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Liên Kết Nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Trang Chủ</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Tính Năng</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Phân Quyền</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Đăng Nhập</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liên Hệ</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP.HCM</li>
+                        <li><i class="fas fa-phone me-2"></i> (028) 1234 5678</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@garagemanagement.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Hệ Thống Quản Lý Garage. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
