@@ -15,8 +15,8 @@ import java.sql.SQLException;
  */
 public class DBUtils {
     private static final String DB_NAME="Car_Dealership";
-    private static final String USER_NAME="sa";
-    private static final String PASSWORD="12345";
+    private static final String USER_NAME=[your_user_name];
+    private static final String PASSWORD=[your_password];
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Connection conn= null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
